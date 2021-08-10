@@ -29,3 +29,7 @@ def bulk():
     for sentence in jsonify(data):
         embeddings = embed([sentence])
     return jsonify(embedding=embeddings)
+
+
+# curl "http://localhost:5000/embeddings?sentence=the+quick+brown+fox" 
+# curl -X POST -H "Content-Type: application/json" -d @payload_2.json http://localhost:5000/embeddings/bulk
